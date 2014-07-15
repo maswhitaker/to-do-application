@@ -1,9 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <link href='http://fonts.googleapis.com/css?family=Crafty+Girls|Libre+Baskerville' rel='stylesheet' type='text/css'>
     <title>ToDoApplication</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -23,36 +24,58 @@
   </head>
   <body>
 
-    <form id="new-item">
-        <label>Author:</label><input id="author-name" type="text" />
-        <label>Content:</label><input id="content-update" type="text" />
-        <label>Do By:</label><input id="to-do-date" type="text" />
-        <button>Submit</button>
+
+<section id="todoapp">
+    <header id="header">
+      <h1>Your Personal Todo List</h1>
+      <hr/>
+      <h2>Operated by: Local Storage!</h2>
+      <input id="new-todo" placeholder="What do you want add?">
+      <button id="add">Add</button>
+      <button id="clear">Clear</button>
+    </header>
+    <article id="main">
+      <ul id="todo-list"></ul>
+    </article>
+  </section>
+
+  <!-- Template code -->
+
+<script type="text/template" id="item-template">
+  <div class="view">
+    <label><%- content %></label>
+  </div>
+</script>
+
+<!-- HTML CODE FOR NON_BACKBONE APPLICATION -->
+
+<!--
+<section>
+  <form id="form" method="POST">
+  <input id="description" name="description" type="text" />
+  <input id="add" type="submit" value="Add" />
+  <button id="clear">Clear</button>
   </form>
-
-
-    <script type="text/template" id="ToDoTemplate">
-        <span class="author"><%= author %></span>
-        <span class="content"><%= content %></span>
-        <span class="to-do-by"><%= dateToCompleteBy %></span>
-        <a href="#" class="delete">[delete]</a>
-    </script>
-
-    <section>
-      <div id="input-container"></div>
-    </section>
+  <ul id="todos"></ul>
+</section> -->
 
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/backbone/backbone.js"></script>
+    <script src="../bower_components/backbone.localstorage/backbone.localStorage-min.js"></script>
+    <script src="../bower_components/requirejs/require.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/models.js"></script>
+    <script src="scripts/collections.js"></script>
+    <script src="scripts/views.js"></script>
+
+    <!-- endbuild -->
 </body>
 </html>

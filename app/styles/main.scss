@@ -3,3 +3,44 @@
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
 // Custom Styles
+body{
+  background-color: #B0CABD;
+  font-family: Libre Baskerville;
+}
+
+section{
+  margin-top: 50px;
+  text-align: center;
+  @include fill-parent;
+
+  header{
+    width: 50%;
+    height: 200px;
+    border-radius: 20px;
+    color: white;
+    background-color: #7BE1AE;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid white 1px;
+
+    input{
+      color: black;
+    }
+  }
+
+  article{
+    width: 50%;
+    border: white solid 1px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    height: auto;
+    background-color: #7BE1AE;
+
+    ul{
+      list-style: none;
+      color: #70A087;
+      font-family: Crafty Girls;
+    }
+  }
+}

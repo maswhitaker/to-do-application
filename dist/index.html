@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js">
   <head>
     <meta charset="utf-8">
@@ -15,14 +15,37 @@
   </head>
   <body>
 
-    <script type="text/template" id="ToDoTemplate">
-        <input type="text" id="input-text" />
-        <input type="button" id="input-button" value="Lets put it in the list" />
-    </script>
 
-    <section>
-      <div id="input-container"></div>
-    </section>
+<section id="todoapp">
+    <header id="header">
+      <h1>Todo List</h1>
+      <input id="new-todo" placeholder="What do you want add?">
+    </header>
+    <article id="main">
+      <ul id="todo-list"></ul>
+    </article>
+  </section>
+
+  <!-- Template code -->
+
+<script type="text/template" id="item-template">
+  <div class="view">
+    <input class="toggle" type="checkbox">
+    <label><%- title %></label>
+  </div>
+</script>
+
+<!-- HTML CODE FOR NON_BACKBONE APPLICATION -->
+
+<!--
+<section>
+  <form id="form" method="POST">
+  <input id="description" name="description" type="text" />
+  <input id="add" type="submit" value="Add" />
+  <button id="clear">Clear</button>
+  </form>
+  <ul id="todos"></ul>
+</section> -->
 
 
     <script src="scripts/vendor.js"></script>

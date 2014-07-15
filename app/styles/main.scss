@@ -23,6 +23,17 @@ section{
     margin-left: 50px;
     border: solid white 1px;
     @include span-columns(3);
+    @media screen and (max-width:400px){
+      @include span-columns(5);
+    }
+
+    button{
+      color: green;
+      &:hover{
+        background-color: red;
+        border-radius: 5px;
+      }
+    }
 
     input{
       color: black;
@@ -39,6 +50,9 @@ section{
     border-radius: 20px;
     height: auto;
     background-color: #7BE1AE;
+    @media screen and (max-width:400px){
+      @include span-columns(10);
+    }
 
     ul{
       list-style: none;

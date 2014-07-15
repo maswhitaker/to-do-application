@@ -11,25 +11,28 @@ body{
 section{
   margin-top: 50px;
   text-align: center;
-  @include fill-parent;
+  @include outer-container;
 
   header{
-    width: 50%;
-    height: 200px;
+    padding: 20px 20px 20px 20px;
+    height: inherit;
     border-radius: 20px;
     color: white;
     background-color: #7BE1AE;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 0.5em;
+    margin-left: 50px;
     border: solid white 1px;
+    @include span-columns(3);
 
     input{
       color: black;
+      padding: 20 20 20 20;
     }
   }
 
   article{
-    width: 50%;
+    @include span-columns(6);
+    width: 30%;
     border: white solid 1px;
     margin-left: auto;
     margin-right: auto;

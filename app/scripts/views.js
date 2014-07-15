@@ -17,7 +17,7 @@ var AppView = Backbone.View.extend({
   events:{
     'click #add': 'createTodo',
     'click #clear': 'clearLocal',
-    
+    'click #delete': 'deleteItem'
   },
   clearLocal: function(){
     window.localStorage.clear();
@@ -40,6 +40,21 @@ var AppView = Backbone.View.extend({
     return{
       content: this.input.val().trim()
     }
-  }
+  },
+  deleteItem: function(e){
+    var lsKeys = Object.keys(localStorage).slice(1);
+    var content = $(e.target).siblings("span").text().trim();
+    var idToRemove;
+    _.find(lsKeys, function (key) {
+      var todoObj = JSON.parse(localStorage[key]);
+      if (todoObj.content === content) {
+        idToRemove = todoObj.id;
+        return true;
+      }
+    });
+    localStorage.removeItem('backbone-todo-' + idToRemove);
+    window.location.reload();
+   }
 });
+
 var appView = new AppView();

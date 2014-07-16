@@ -56,5 +56,3 @@ var AppView = Backbone.View.extend({
     window.location.reload();
    }
 });
-
-var appView = new AppView();

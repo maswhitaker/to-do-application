@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <link href='http://fonts.googleapis.com/css?family=Crafty+Girls|Libre+Baskerville' rel='stylesheet' type='text/css'>
     <title>ToDoApplication</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -18,20 +19,29 @@
 
 <section id="todoapp">
     <header id="header">
-      <h1>Todo List</h1>
+      <h1>Your Personal Todo List</h1>
+      <hr/>
+      <h2>Operated by: Local Storage!</h2>
       <input id="new-todo" placeholder="What do you want add?">
+      <button id="add">Add</button>
+      <button id="clear">Clear</button>
     </header>
     <article id="main">
+      <h1> Things to Do:</h1>
       <ul id="todo-list"></ul>
     </article>
-  </section>
+</section>
 
   <!-- Template code -->
 
 <script type="text/template" id="item-template">
   <div class="view">
-    <input class="toggle" type="checkbox">
-    <label><%- title %></label>
+    <label>
+      <span>
+        <%- content %>
+      </span>
+      <button id="delete">delete</button>
+    </label>
   </div>
 </script>
 
@@ -50,6 +60,6 @@
 
     <script src="scripts/vendor.js"></script>
 
-        <script src="scripts/main.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
